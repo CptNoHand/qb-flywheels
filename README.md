@@ -172,7 +172,7 @@ Config.Damages = { -- Part labels which will be damaged
 -- add to qb-core/shared.lua
 
 ```
-["flywheels"] = {
+["custommotors"] = {
 		label = "Fly Wheels",
 		defaultDuty = true,
 		grades = {

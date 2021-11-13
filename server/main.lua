@@ -153,7 +153,7 @@ QBCore.Functions.CreateCallback('qb-vehicletuning:server:IsMechanicAvailable', f
 	for k, v in pairs(QBCore.Functions.GetPlayers()) do
         local Player = QBCore.Functions.GetPlayer(v)
         if Player ~= nil then 
-            if (Player.PlayerData.job.name == "flywheels" and Player.PlayerData.job.onduty) then
+            if (Player.PlayerData.job.name == "custommotors" and Player.PlayerData.job.onduty) then
                 amount = amount + 1
             end
         end
@@ -214,7 +214,7 @@ QBCore.Commands.Add("setmechanic2", "Give Someone The Mechanic job", {{name="id"
         if TargetId ~= nil then
             local TargetData = QBCore.Functions.GetPlayer(TargetId)
             if TargetData ~= nil then
-                TargetData.Functions.SetJob("flywheels")
+                TargetData.Functions.SetJob("custommotors")
                 TriggerClientEvent('QBCore:Notify', TargetData.PlayerData.source, "You Were Hired As An Autocare Employee!")
                 TriggerClientEvent('QBCore:Notify', source, "You have ("..TargetData.PlayerData.charinfo.firstname..") Hired As An Autocare Employee!")
             end
@@ -234,7 +234,7 @@ QBCore.Commands.Add("firemechanic2", "Fire A Mechanic", {{name="id", help="ID Of
         if TargetId ~= nil then
             local TargetData = QBCore.Functions.GetPlayer(TargetId)
             if TargetData ~= nil then
-                if TargetData.PlayerData.job.name == "flywheels" then
+                if TargetData.PlayerData.job.name == "custommotors" then
                     TargetData.Functions.SetJob("unemployed")
                     TriggerClientEvent('QBCore:Notify', TargetData.PlayerData.source, "You Were Fired As An Autocare Employee!")
                     TriggerClientEvent('QBCore:Notify', source, "You have ("..TargetData.PlayerData.charinfo.firstname..") Fired As Autocare Employee!")

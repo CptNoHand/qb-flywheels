@@ -53,7 +53,7 @@ AddEventHandler('QBCore:Client:OnPlayerLoaded', function()
     QBCore.Functions.GetPlayerData(function(PlayerData)
         PlayerJob = PlayerData.job
         if PlayerData.job.onduty then
-            if PlayerData.job.name == "flywheels" then
+            if PlayerData.job.name == "custommotors" then
                 TriggerServerEvent("QBCore:ToggleDuty")
             end
         end
@@ -93,7 +93,7 @@ Citizen.CreateThread(function()
     SetBlipAlpha(Blip, 0.7)
 
     BeginTextCommandSetBlipName("STRING")
-    AddTextComponentSubstringPlayerName("Fly Wheels Mechanic")
+    AddTextComponentSubstringPlayerName("Custom Motors")
     EndTextCommandSetBlipName(Blip)
 end)
 
@@ -102,7 +102,7 @@ Citizen.CreateThread(function()
         local inRange = false
 
         if isLoggedIn then
-            if PlayerJob.name == "flywheels" then
+            if PlayerJob.name == "custommotors" then
                 local pos = GetEntityCoords(PlayerPedId())
                 local StashDistance = #(pos - Config.Locations["stash"])
                 local OnDutyDistance = #(pos - Config.Locations["duty"])
@@ -116,8 +116,8 @@ Citizen.CreateThread(function()
                         if StashDistance < 1 then
                             DrawText3Ds(Config.Locations["stash"].x, Config.Locations["stash"].y, Config.Locations["stash"].z, "[E] Open Stash")
                             if IsControlJustReleased(0, 38) then
-                                TriggerEvent("inventory:client:SetCurrentStash", "flywheelsstash")
-                                TriggerServerEvent("inventory:server:OpenInventory", "stash", "flywheelsstash", {
+                                TriggerEvent("inventory:client:SetCurrentStash", "custommotorsstash")
+                                TriggerServerEvent("inventory:server:OpenInventory", "stash", "custommotorsstash", {
                                     maxweight = 4000000,
                                     slots = 500,
                                 })

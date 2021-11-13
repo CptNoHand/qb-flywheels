@@ -3,7 +3,7 @@ Config = {}
 Config.AttachedVehicle = nil
 
 Config.AuthorizedIds = {
-    "insertcitizenidhere",
+    "UCC99033",
 }
 
 Config.MaxStatusValues = {
@@ -67,21 +67,29 @@ Config.RepairCostAmount = {
 }
 
 Config.Businesses = {
-    "Auto Repair",
+    "Custom Motors",
 }
 
 Config.Plates = {
     [1] = {
-        coords = vector4(-340.95, -128.24, 39, 160.46),
+        coords = vector4(14.48, 6462.56, 31.44, 223.67),
+        AttachedVehicle = nil,
+    },
+    [2] = {
+        coords = vector4(17.33, 6465.19, 31.44, 221.05),
+        AttachedVehicle = nil,
+    },
+    [3] = {
+        coords = vector4(24.88, 6456.31, 31.44, 314.03),
         AttachedVehicle = nil,
     },
 }
 
 Config.Locations = {
-    ["exit"] = vector3(-339.04, -135.53, 39),
-    ["stash"] = vector3(-323.19, -129.86, 39),
-    ["duty"] = vector3(-344.35, -123.39, 39), 
-    ["vehicle"] = vector4(-370.51, -107.88, 38.35, 72.56), 
+    ["exit"] = vector3(37.19, 6455.16, 31.44),
+    ["stash"] = vector3(17.11, 6457.47, 31.44),
+    ["duty"] = vector3(38.56, 6464.6, 32.09), 
+    ["vehicle"] = vector4(-27.67, 6442.66, 31.43, 313.74), 
 }
 
 Config.Vehicles = {
